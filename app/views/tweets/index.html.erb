@@ -16,7 +16,7 @@
         <h5 class="modal-title" id="exampleModalLabel">新規投稿</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <%= form_for @tweet, remote: true  do |f|%>
+      <%= form_with model:@tweet,local:false do |f|%>
       <div class="modal-body">
         <div class="form-group">
           <%= f.label :title,"TODO" %>
@@ -36,6 +36,7 @@
         <%= f.submit "投稿する", class: "btn btn-primary"%>
       </div>
       <% end %>
+      <%= render @tweet%>
     </div>
   </div>
 </div>

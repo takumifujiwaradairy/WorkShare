@@ -60,3 +60,5 @@ gem 'devise'
 gem 'bootstrap', '~> 5.1.0'
 
 gem 'jquery-rails'
+
+gem 'pry-rails'
