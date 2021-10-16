@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   
   get '/' => 'hello#index'
   root 'hello#index'
-  resources :tweets, only:[:index, :create]
+  resources :tweets, only:[:index, :create,:show,:destroy]
 end
