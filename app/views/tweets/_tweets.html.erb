@@ -4,6 +4,7 @@
     <p class="card-text"><%= tweet.title %></p>
     <p class="card-text"><small><%= simple_format tweet.tantou %></small></p>
     <p class="card-text"><small><%= simple_format tweet.body %></small></p>
+    <%# <p class="card-text"><small><%= simple_format tweet.user.email %>
     <%= link_to "詳細へ", tweet_path(tweet.id) %>
     <%= button_to "削除する", tweet_path(tweet.id), method: :delete %>
   </div>

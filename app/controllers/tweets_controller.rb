@@ -8,6 +8,7 @@ class TweetsController < ApplicationController
   def create
     Tweet.create(tweet_params)
     @tweets = Tweet.all
+    
   end
 
   def show
@@ -22,6 +23,6 @@ class TweetsController < ApplicationController
 
   private
   def tweet_params
-      params.require(:tweet).permit(:title,:tantou,:body)
+      params.require(:tweet).permit(:title,:tantou,:body,:user_id)
   end
 end
