@@ -6,7 +6,9 @@
     <p class="card-text"><small><%= simple_format tweet.body %></small></p>
     <p class="card-text"><small><%= tweet.user_id %></small></p> 
     <%= link_to "詳細へ", tweet_path(tweet.id) %>
+    <% if user_signed_in? && current_user.id == tweet.user_id %> 
     <%= button_to "削除する", tweet_path(tweet.id), method: :delete %>
+    <% end %> 
   </div>
 </div>
 <% end %>
