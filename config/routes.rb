@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   
   get '/' => 'hello#index'
   root 'hello#index'
+  resources :users, only: [:show] 
   resources :tweets, only:[:index, :create,:show,:destroy]
 end
