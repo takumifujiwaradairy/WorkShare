@@ -1,4 +1,4 @@
-console.log("aaaaa");
 $("textarea").val("");
 $("input").val("");
 $('#exampleModal').modal('hide')
+$('tweets').html("<%= escape_javascript(render 'tweets', tweets: @tweets) %>")
