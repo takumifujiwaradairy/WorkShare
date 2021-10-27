@@ -6,7 +6,7 @@ class TweetsController < ApplicationController
   end
 
   def create
-    Tweet.create(tweet_params)
+    current_user.tweets.create!(tweet_params)
     @tweets = Tweet.all
     
   end
