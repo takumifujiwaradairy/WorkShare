@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_21_225843) do
+ActiveRecord::Schema.define(version: 2021_10_31_102924) do
 
   create_table "tweets", force: :cascade do |t|
     t.string "title"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2021_10_21_225843) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
     t.date "time"
+    t.integer "completed"
   end
 
   create_table "users", force: :cascade do |t|
