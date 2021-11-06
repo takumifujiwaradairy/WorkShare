@@ -7,14 +7,14 @@ FactoryBot.define do
   end
   factory :untweet, class: Tweet do
     association :user,factory: :user
-    title{""}
+    title{''}
     tantou{"斎藤"}
-    body{""}
+    body{''}
   end
   factory :untweet2, class: Tweet do
     association :user,factory: :user
     title{"テストを書いて"}
-    tantou{""}
-    body{""}
+    tantou{''}
+    body{''}
   end
 end

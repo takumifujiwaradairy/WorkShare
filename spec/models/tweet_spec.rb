@@ -1,8 +1,9 @@
 require 'rails_helper'
 RSpec.describe Tweet, type: :model do
-  let(:tweet) {FactoryBot.create(:tweet)}
   feature "tweet" do
     it "Userが存在し、:tatle,:tantou,が存在すれば有効であること" do
+      let(:tweet){FactoryBot.build(:tweet)}
+      tweet.valid?
       expect(tweet).to be_valid
     end
   end
