@@ -1,5 +1,4 @@
 require 'rails_helper'
-
 RSpec.describe User, type: :model do
   pending "add some examples to (or delete) #{__FILE__}"
   
@@ -72,5 +71,4 @@ RSpec.describe User, type: :model do
     user = User.new(password: '&'*10,email: 'a@gamil.com',name:'a')
     expect(user).not_to be_valid
   end
-
 end
