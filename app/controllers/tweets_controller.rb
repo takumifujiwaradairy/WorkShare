@@ -6,8 +6,9 @@ class TweetsController < ApplicationController
   end
 
   def create
-    Tweet.create!(tweet_params)
+    current_user.tweets.create!(tweet_params)
     @tweets = Tweet.all
+    
   end
 
   def show
@@ -17,11 +18,11 @@ class TweetsController < ApplicationController
   def destroy
     tweet = Tweet.find(params[:id])
     tweet.destroy
-    redirect_to action: :index
+    redirect_to tweets_path
   end
 
   private
   def tweet_params
-      params.require(:tweet).permit(:title,:tantou,:body).merge(user_id: current_user.id)
+      params.require(:tweet).permit(:title,:tantou,:body,:user_id)
   end
 end
