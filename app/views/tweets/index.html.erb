@@ -34,7 +34,6 @@
   </div>
 </div>
 
-
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -61,18 +60,17 @@
           <%= f.date_field :time %>
         </div>
         <%= f.hidden_field :completed,:value => 0 %>
-      </div> 
+      </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
         <%= f.submit "投稿する", class: "btn btn-primary"%>
       </div>
       <% end %>
-      
     </div>
   </div>
 </div>
 <footer>
- <div class="bg-dark text-white text-center p-3">
-  Copyright Takumi Fujiwara ,2021 All Rights Reserved.
- </div>
+  <div class="bg-dark text-white text-center p-3">
+    Copyright Takumi Fujiwara ,2021 All Rights Reserved.
+  </div>
 </footer>
