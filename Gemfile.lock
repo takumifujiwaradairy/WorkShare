@@ -300,7 +300,7 @@ DEPENDENCIES
   bootstrap (~> 5.1.0)
   bootstrap4-datetime-picker-rails
   byebug
-  capybara (>= 3.26)
+  capybara
   devise
   factory_bot_rails
   font-awesome-rails
