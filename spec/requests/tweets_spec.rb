@@ -2,7 +2,7 @@ require 'rails_helper'
 RSpec.describe "Tweets", type: :request do
   describe "GET /tweets" do
     before do
-      @user = FactoryBot.create(:user)
+      let!(:user) { FactoryBot.create(:user) }
     end
     it 'ログインしているuserでは200レスポンスを返すこと' do
       sign_in @user
