@@ -1,6 +1,13 @@
 <% tweets.each do |tweet|%>
 <div class="card mb-1">
   <div class="card-body">
+    <% if @tweet.completed=0%>
+    <p class="card-text">開始前</p>
+    <% elsif @tweet.completed=1 %>
+    <p class="card-text">進行中</p>
+    <% elsif @tweet.completed=2 %>
+    <p class="card-text">終了</p>
+    <% end %>
     <p class="card-text"><%= tweet.title %></p>
     <p class="card-text"><small><%= simple_format tweet.tantou %></small></p>
     <p class="card-text"><small><%= simple_format tweet.body %></small></p>
@@ -8,7 +15,7 @@
     <%= link_to "詳細へ", tweet_path(tweet.id) %>
     <% if user_signed_in? && current_user.id == tweet.user_id %> 
     <%= button_to "削除する", tweet_path(tweet.id), method: :delete %>
-    <% end %> 
+    <% end %>
   </div>
 </div>
 <% end %>
