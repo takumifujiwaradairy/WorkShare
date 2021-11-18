@@ -33,7 +33,13 @@ ink text-white" href="/users/sign_in">ログイン</a>
     </div>
   </div>
 </div>
-
+<h1>ユーザー検索</h1>
+<%= search_form_for @q, url: tweets_path do |f| %>
+  <%= f.label :tantou_cont, '担当者名' %>
+  <%= f.search_field :tantou_cont %>
+  <br>
+  <%= f.submit '検索' %>
+<% end %>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">

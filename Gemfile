@@ -76,4 +76,6 @@ gem 'rubocop-rails', require: false
 
 gem 'rubocop-performance', require: false
 
+gem 'ransack'
+
 gem 'enum_help'
