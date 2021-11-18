@@ -1,41 +1,69 @@
-<div class="box">
-  <div class="box-inner">
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <h1>新規登録</h1>
-    <%= render "users/shared/error_messages", resource: resource %>
-
-    <div class="box-email">
-      <%= f.label :name,"登録名" %>
-      <em>（好きな名前で登録しよう）</em>
-      <br />
-      <%= f.text_field :name, autofocus: true %>
+<header class="bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <div class="logo">
+            <a class="nav-link text-white" aria-current="page" href="/">WorkShare</a>
+          </div>
+        </div>
+      </div>
     </div>
+  </nav>
+</header>
+<main>
+  <div class="menu2 d-flex align-items-center box">
+    <div class="container box-inner col-4">
+      <div class="bg-light p-3  rounded ">
+        <h1>新規登録</h1>
 
-    <div class="box-email">
-      <%= f.label :email,"Eメール"%><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "users/shared/error_messages", resource: resource %>
 
-    <div class="box-password">
-      <%= f.label :password,"パスワード" %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> 文字以上で登録)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
-    </div>
+        <div class="box-email">
+          <%= f.label :name,"登録名" %>
+          <em>（好きな名前で登録しよう）</em>
+          <br />
+          <%= f.text_field :name, autofocus: true %>
+        </div>
 
-    <div class="box-password">
-      <%= f.label :password_confirmation,"確認のためもう一度パスワード" %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-    </div>
+        <div class="box-email">
+          <%= f.label :email,"Eメール"%><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
 
-    <div class="box-login">
-      <%= f.submit "登録" %>
-    </div>
-    <% end %>
-    <div class="box-newusr">
-      <p><span>--</span> すでにWorkShareのアカウントをお持ちですか？ <span>--</span></p>
-      <%= render "users/shared/links" %>
+        <div class="box-password">
+          <%= f.label :password,"パスワード" %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> 文字以上で登録)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password" %>
+        </div>
+
+        <div class="box-password">
+          <%= f.label :password_confirmation,"確認のためもう一度パスワード" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div>
+
+        <div class="box-login">
+          <%= f.submit "登録" %>
+        </div>
+        <% end %>
+        <div class="box-newusr">
+          <p><span>--</span> すでにWorkShareのアカウントをお持ちですか？ <span>--</span></p>
+          <%= link_to "ログイン画面へ進む",new_user_session_path %>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</main>
+<footer class="bg-dark">
+  <div class="text-white text-center">
+    Copyright Takumi Fujiwara ,2021 All Rights Reserved.
+  </div>
+</footer>
