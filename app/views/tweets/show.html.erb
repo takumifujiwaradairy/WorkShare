@@ -17,14 +17,19 @@
   </div>
  </nav>
 </header>
-
 <div class="tweet">
+    <% if @tweet.completed=0%>
+    <p class="card-text">開始前</p>
+    <% elsif @tweet.completed=1 %>
+    <p class="card-text">進行中</p>
+    <% elsif @tweet.completed=2 %>
+    <p class="card-text">終了</p>
+    <% end %>
   <p><%= @tweet.body %></p>
   <p><%= @tweet.created_at %></p>
+    <%= form_with(model: @tweet, url: tweet_path, local: true,method: :patch, class: "form-row") do |f| %>
+    <%= f.select :completed, Tweet.completeds_i18n.invert, {prompt: false}, class:"form-control form-control-sm col-2" %>
+    <%= f.submit "更新" %>
+    <% end %>
 </div>
 <%= link_to "Tweet一覧に戻る", tweets_path %>
-<footer class="bg-dark">
-      <div class="text-white text-center">
-        Copyright Takumi Fujiwara ,2021 All Rights Reserved.
-      </div>
-    </footer>

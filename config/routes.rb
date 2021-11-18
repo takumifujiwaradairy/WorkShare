@@ -5,9 +5,5 @@ Rails.application.routes.draw do
   root 'hello#index'
   resources :hello, only: [:index]
   resources :users, only: [:show]
-  resources :tweets ,only: %i[index create show destroy] do
-    collection do
-      get 'search'
-    end 
-  end
+resources :tweets, only: %i[index create show destroy update]
 end

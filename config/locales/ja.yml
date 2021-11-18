@@ -1,0 +1,7 @@
+ja:
+  enums:
+    tweet:
+      completed:
+        outstanding: "実施前"
+        in_progress: "実行中"
+        closed: "完了"

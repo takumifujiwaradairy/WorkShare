@@ -98,6 +98,8 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.4.4)
+    enum_help (0.0.17)
+      activesupport (>= 3.0.0)
     erubi (1.10.0)
     execjs (2.8.1)
     factory_bot (6.2.0)
@@ -304,8 +306,9 @@ DEPENDENCIES
   bootstrap (~> 5.1.0)
   bootstrap4-datetime-picker-rails
   byebug
-  capybara (>= 3.26)
+  capybara
   devise
+  enum_help
   factory_bot_rails
   font-awesome-rails
   jbuilder (~> 2.7)
