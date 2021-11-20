@@ -15,9 +15,10 @@
  *= require_tree .
  *= require_self
  */
-
+ @import 'font-awesome-sprockets';
  @import "font-awesome";
  @import "tempusdominus-bootstrap-4.css";
+ @import "@fortawesome/fontawesome-free/scss/fontawesome";
  header{
   height: 5vh;
 }

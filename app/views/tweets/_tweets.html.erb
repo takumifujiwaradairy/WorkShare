@@ -9,9 +9,13 @@
     <p class="card-text">終了</p>
     <% end %>
     <p class="card-text"><%= tweet.title %></p>
-    <%= link_to "詳細へ", tweet_path(tweet.id) %>
-    <% if user_signed_in? && current_user.id == tweet.user_id %> 
-    <%= button_to "削除する", tweet_path(tweet.id), method: :delete %>
+    <%= link_to tweet_path(tweet.id) do %>
+    <i class="fas fa-search"></i>
+    <% end %>
+    <% if user_signed_in? && current_user.id == tweet.user_id %>
+    <%= link_to tweet_path(tweet.id), method: :delete do %>
+    <i class="fas fa-trash"></i>
+    <% end %>
     <% end %>
   </div>
 </div>
