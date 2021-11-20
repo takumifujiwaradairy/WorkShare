@@ -1,6 +1,6 @@
 require 'rails_helper'
-RSpec.describe "Tweets", type: :request do
-  describe "GET /tweets" do
+RSpec.describe 'Tweets', type: :request do
+  describe 'GET /tweets' do
     before do
       let!(:user) { FactoryBot.create(:user) }
     end

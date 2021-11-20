@@ -19,9 +19,9 @@ class TweetsController < ApplicationController
   def update
     @tweet = Tweet.find(params[:id])
     if @tweet.update(tweet_params)
-      redirect_to tweets_path(@tweet), notice: "対応ステータスを更新しました"
+      redirect_to tweets_path(@tweet), notice: '対応ステータスを更新しました'
     else
-      render :show, alert: "対応ステータスを更新できませんでした"
+      render :show, alert: '対応ステータスを更新できませんでした'
     end
   end
 
@@ -32,7 +32,8 @@ class TweetsController < ApplicationController
   end
 
   private
+
   def tweet_params
-      params.require(:tweet).permit(:title,:tantou,:body,:time,:completed)
+    params.require(:tweet).permit(:title, :tantou, :body, :time, :completed)
   end
 end
