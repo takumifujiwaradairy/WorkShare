@@ -11,9 +11,8 @@
           <div class="logo">
             <a class="nav-link text-white" aria-current="page" href="/">WorkShare</a>
           </div>
-           <%= link_to "マイページへ", user_path(current_user.id),{class: "nav-link text-white"} %>
+          <%= link_to "マイページへ", user_path(current_user),{class: "nav-link text-white"} %>
         </div>
-ink text-white" href="/users/sign_in">ログイン</a>
       </div>
     </div>
   </nav>
@@ -25,58 +24,78 @@ ink text-white" href="/users/sign_in">ログイン</a>
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
         新規投稿
       </button>
+      <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+        検索一覧
+      </button>
     </div>
     <% if user_signed_in? %>
-<% end %>
+    <% end %>
     <div class="col-9 tweets">
       <%= render 'tweets', tweets: @tweets%>
     </div>
   </div>
 </div>
-<h1>ユーザー検索</h1>
-<%= search_form_for @q, url: tweets_path do |f| %>
-  <%= f.label :tantou_cont, '担当者名' %>
-  <%= f.search_field :tantou_cont %>
-  <br>
-  <%= f.submit '検索' %>
-<% end %>
+
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">新規投稿</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        <%= form_with model:@tweet,local:false do |f|%>
+          <div class="form-group">
+            <%= f.label :title,"TODO" %>
+            <%= f.text_field :title, class: "form-control"%>
+          </div>
+          <div class="form-group">
+            <%= f.label :tantou,"担当者" %>
+            <%= f.text_field :tantou, class: "form-control"%>
+          </div>
+          <div class="form-group">
+            <%= f.label :body,"内容" %>
+            <%= f.text_area :body, class: "form-control"%>
+          </div>
+          <div class="form-group">
+            <%= f.label :time,"期日" %>
+            <%= f.date_field :time %>
+          </div>
+          <%= f.hidden_field :completed,:value => 0 %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+          <%= f.submit "投稿する", class: "btn btn-primary"%>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">新規投稿</h5>
+        <h5 class="modal-title" id="exampleModalLabel">検索一覧</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <%= form_with model:@tweet,local:false do |f|%>
+      <%= search_form_for @q, url: tweets_path do |f| %>
       <div class="modal-body">
         <div class="form-group">
-          <%= f.label :title,"TODO" %>
-          <%= f.text_field :title, class: "form-control"%>
+          <%= f.label :tantou_cont, '担当者名' %>
+          <%= f.search_field :tantou_cont,class: "form-control" %>
         </div>
-        <div class="form-group">
-          <%= f.label :tantou,"担当者" %>
-          <%= f.text_field :tantou, class: "form-control"%>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+          <%= f.submit "検索", class: "btn btn-primary"%>
         </div>
-        <div class="form-group">
-          <%= f.label :body,"内容" %>
-          <%= f.text_area :body, class: "form-control"%>
-        </div>
-        <div class="form-group">
-          <%= f.label :time,"期日" %>
-          <%= f.date_field :time %>
-        </div>
-        <%= f.hidden_field :completed,:value => 0 %>
+        <% end %>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
-        <%= f.submit "投稿する", class: "btn btn-primary"%>
-      </div>
-      <% end %>
     </div>
   </div>
 </div>
 <footer class="bg-dark">
   <div class="text-white text-center">
-        Copyright Takumi Fujiwara ,2021 All Rights Reserved.
+    Copyright Takumi Fujiwara ,2021 All Rights Reserved.
   </div>
-    </footer>
+</footer>
