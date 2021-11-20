@@ -30,6 +30,14 @@
     </div>
     <% if user_signed_in? %>
     <% end %>
+    <div class="container">
+      <tr>
+        <th><%= sort_link(@q, :completed, "ステータス") %></th>
+        <th>担当</th>
+        <th>内容</th>
+        <th><%= sort_link(@q, :time, "締め切り日") %></th>
+      </tr>
+    </div>
     <div class="col-9 tweets">
       <%= render 'tweets', tweets: @tweets%>
     </div>
