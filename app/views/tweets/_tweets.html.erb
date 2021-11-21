@@ -1,13 +1,6 @@
-<% @boards.each do |tweet|%>
+<% @tweets.each do |tweet|%>
 <div class="container">
   <div class="row">
-    <% if @tweet.completed=0%>
-    <p class="col-2">開始前</p>
-    <% elsif @tweet.completed=1 %>
-    <p class="col-2">進行中</p>
-    <% elsif @tweet.completed=2 %>
-    <p class="col-2">終了</p>
-    <% end %>
     <p class="col-2"><%= tweet.tantou %></p>
     <p class="col-4"><%= tweet.title %></p>
     <p class="col-2"><%= tweet.time %></p>
