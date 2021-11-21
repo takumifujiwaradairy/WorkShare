@@ -10,6 +10,8 @@ class TweetsController < ApplicationController
   def create
     current_user.tweets.create!(tweet_params)
     @tweets = Tweet.all
+    @q = Tweet.ransack(params[:q])
+    @boards = @q.result
   end
 
   def show
