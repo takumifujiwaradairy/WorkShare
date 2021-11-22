@@ -83,3 +83,9 @@ gem 'enum_help'
 gem 'font-awesome-sass'
 
 gem 'kaminari'
+
+gem 'carrierwave', '~> 1.3', '>= 1.3.1'
+
+gem 'cloudinary'
+
+gem 'dotenv-rails'
