@@ -81,3 +81,5 @@ gem 'ransack'
 gem 'enum_help'
 
 gem 'font-awesome-sass'
+
+gem 'kaminari'

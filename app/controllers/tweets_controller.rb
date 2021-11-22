@@ -4,14 +4,13 @@ class TweetsController < ApplicationController
     @tweets = Tweet.all
     @tweet = Tweet.new
     @q = Tweet.ransack(params[:q])
-    @boards = @q.result
+    @boards = @q.result.page(params[:page])
   end
 
   def create
     current_user.tweets.create!(tweet_params)
     @tweets = Tweet.all
     @q = Tweet.ransack(params[:q])
-    @boards = @q.result
   end
 
   def show
@@ -38,7 +37,6 @@ class TweetsController < ApplicationController
   end
 
   private
-
   def tweet_params
     params.require(:tweet).permit(:title, :tantou, :body, :time, :completed)
   end
