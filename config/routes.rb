@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :tweets, only: %i[index create show edit destroy update] do
     resources :likes, only: %i[create destroy]
+    resources :comments, only: [:create]
   end
 end

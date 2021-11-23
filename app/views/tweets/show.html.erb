@@ -31,5 +31,26 @@
     <%= f.select :completed, Tweet.completeds_i18n.invert, {prompt: false}, class:"form-control form-control-sm col-2" %>
     <%= f.submit "更新" %>
     <% end %>
+
+    <div class="comment-wrapper">
+  <p>コメント一覧</p>
+  <% @comments.each do |c| %>
+    <div>
+      <%= c.user.name unless c.user.blank? %>
+      <br>
+      <%= c.content %>
+    </div>
+      <br>
+  <% end %>
+
+  <% if user_signed_in? %>
+    <%= form_with(model: [@tweet, @comment], local: true) do |f| %>
+      <%= f.text_area :content %>
+      <%= button_tag type: "submit" do %>
+        <i class="far fa-comments"></i> コメントする
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
 </div>
 <%= link_to "Tweet一覧に戻る", tweets_path %>
