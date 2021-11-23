@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
 
   def create
     tweet = Tweet.find(params[:tweet_id])
-    comment = tweet.comments.build(comment_params) #buildを使い、contentとtweet_idの二つを同時に代入
+    comment = tweet.comments.build(comment_params) 
     comment.user_id = current_user.id
     if comment.save
       flash[:success] = "コメントしました"
