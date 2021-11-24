@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   root 'hello#index'
   resources :hello, only: [:index]
   resources :users, only: [:show]
-  resources :tweets, only: %i[index create show edit destroy update]
+  resources :tweets, only: %i[index create show edit destroy update] do
+    resources :likes, only: %i[create destroy]
+  end
 end
