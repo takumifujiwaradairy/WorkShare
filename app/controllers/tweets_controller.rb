@@ -18,12 +18,16 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find(params[:id])
   end
 
+  def edit
+    @tweet = Tweet.find(params[:id])
+  end
+
   def update
     @tweet = Tweet.find(params[:id])
     if @tweet.update(tweet_params)
       redirect_to tweets_path(@tweet), notice: '対応ステータスを更新しました'
     else
-      render :show, alert: '対応ステータスを更新できませんでした'
+      render :show
     end
   end
 
