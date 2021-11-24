@@ -1,1 +1,56 @@
-<h1>aaaaaaaaaaaaa</h1>
+<header class="bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <div class="logo">
+            <a class="nav-link text-white" aria-current="page" href="/">WorkShare</a>
+          </div>
+          <%= link_to "マイページへ", user_path(current_user),{class: "nav-link text-white"} %>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<main>
+  <div class="menu2 d-flex align-items-center box">
+    <div class="container box-inner col-4">
+      <div class="bg-light p-3  rounded ">
+        <h1>編集</h1>
+        <%= form_with model:@tweet do |f|%>
+        <div class="form-group">
+          <%= f.label :title,"TODO" %>
+          <%= f.text_field :title, class: "form-control"%>
+        </div>
+        <div class="form-group">
+          <%= f.label :tantou,"担当者" %>
+          <%= f.text_field :tantou, class: "form-control"%>
+        </div>
+        <div class="form-group">
+          <%= f.label :body,"内容" %>
+          <%= f.text_area :body, class: "form-control"%>
+        </div>
+        <div class="form-group">
+          <%= f.label :time,"期日" %>
+          <%= f.date_field :time %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <%= link_to "戻る", tweets_path(current_user),{class: "btn btn-secondary"} %>
+        <%= f.submit "変更", class: "btn btn-primary"%>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  </div>
+</main>
+<footer class="bg-dark">
+  <div class="text-white text-center">
+    Copyright Takumi Fujiwara ,2021 All Rights Reserved.
+  </div>
+</footer>
