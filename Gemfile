@@ -79,3 +79,5 @@ gem 'rubocop-performance', require: false
 gem 'ransack'
 
 gem 'enum_help'
+
+gem 'font-awesome-sass'
