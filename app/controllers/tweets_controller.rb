@@ -11,6 +11,7 @@ class TweetsController < ApplicationController
     current_user.tweets.create!(tweet_params)
     @tweets = Tweet.all
     @q = Tweet.ransack(params[:q])
+    @boards = @q.result.page(params[:page])
   end
 
   def show
