@@ -11,10 +11,10 @@
     <p class="col-2"><%= tweet.tantou %></p>
     <p class="col-4"><%= tweet.title %></p>
     <p class="col-2"><%= tweet.time %></p>
-    <%= link_to tweet_path(tweet.id),class: "col-1" do %>
+    <%= link_to tweet_path(tweet),class: "col-1" do %>
     <i class="fas fa-search"></i>
     <% end %>
-    <% if user_signed_in? && current_user.id == tweet.user_id %>
+    <% if current_user == tweet.user %>
     <%= link_to tweet_path(tweet.id),class: "col-1", method: :delete do %>
     <i class="fas fa-trash"></i>
     <% end %>
