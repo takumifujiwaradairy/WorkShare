@@ -1,35 +1,71 @@
-<header>
-  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-  <div class="container-fluid">
-    <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-       <div class="logo">
-        <a class="nav-link text-white" aria-current="page" href="/">ToDoShare</a>
-       </div>
-        <a class="nav-link text-white" href="#">使い方</a>
-        <a class="nav-link text-white" href="/users/sign_up">新規登録</a>
-        <a class="nav-link text-white" href="/users/sign_in">ログイン</a>
+<header class="bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <div class="logo">
+            <a class="nav-link text-white" aria-current="page" href="/">WorkShare</a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
- </nav>
+  </nav>
 </header>
+<div class="container">
 <div class="tweet">
-    <% if @tweet.completed=0%>
-    <p class="card-text">開始前</p>
-    <% elsif @tweet.completed=1 %>
-    <p class="card-text">進行中</p>
-    <% elsif @tweet.completed=2 %>
-    <p class="card-text">終了</p>
-    <% end %>
-  <p><%= @tweet.body %></p>
-  <p><%= @tweet.created_at %></p>
-    <%= form_with(model: @tweet, url: tweet_path, local: true,method: :patch, class: "form-row") do |f| %>
+  <h1>TODO詳細</h1>
+
+  <div class="form">
+    <p>担当者</p>
+    <p><%= @tweet.tantou %></p>
+  </div>
+
+  <div class="form">
+    <p>タイトル</p>
+    <p><%= @tweet.title %></p>
+  <div>
+
+  <div class="form">
+    <p>期限</p>
+    <p><%= @tweet.time %></p>
+  <div>
+
+  <div class="form">
+    <p>詳細</p>
+    <p><%= @tweet.body %></p>
+  <div>
+
+  <div class="from">
+    <%= form_with(model: @tweet, url: tweet_path, local: true,method: :patch, class: "form-row col-1") do |f| %>
     <%= f.select :completed, Tweet.completeds_i18n.invert, {prompt: false}, class:"form-control form-control-sm col-2" %>
     <%= f.submit "更新" %>
     <% end %>
+  </div>
+    <div class="comment-wrapper">
+  <p>コメント一覧</p>
+  <% @comments.each do |c| %>
+    <div>
+      <%= image_tag c.user.image_url ,class: "user_image ",size: "60x60" if c.user.image? %>
+      <%= c.user.name unless c.user.blank? %>
+      <br>
+      <%= c.content %>
+    </div>
+      <br>
+  <% end %>
+
+  <% if user_signed_in? %>
+    <%= form_with(model: [@tweet, @comment], local: true) do |f| %>
+      <%= f.text_area :content,class: "col-8" %>
+      <%= button_tag type: "submit" do %>
+        <i class="far fa-comments"></i> コメントする
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
 </div>
 <%= link_to "Tweet一覧に戻る", tweets_path %>
