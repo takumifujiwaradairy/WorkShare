@@ -1,6 +1,7 @@
 <% @boards.each do |tweet|%>
 <div class="container">
   <div class="row">
+     <p class="col-2"><%= tweet.completed_i18n%></p> 
     <p class="col-2"><%= tweet.tantou %></p>
     <p class="col-4"><%= tweet.title %></p>
     <p class="col-2"><%= tweet.time %></p>
