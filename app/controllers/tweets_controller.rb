@@ -4,14 +4,14 @@ class TweetsController < ApplicationController
     @tweets = Tweet.order('date').all
     @tweet = Tweet.new
     @q = Tweet.ransack(params[:q])
-    @boards = @q.result.page(params[:page]).per(8)
+    @boards = @q.result.page(params[:page]).per(10)
   end
 
   def create
     current_user.tweets.create!(tweet_params)
     @tweets = Tweet.all
     @q = Tweet.ransack(params[:q])
-    @boards = @q.result.page(params[:page]).per(8)
+    @boards = @q.result.page(params[:page]).per(10)
   end
 
   def show

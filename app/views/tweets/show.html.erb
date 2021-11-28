@@ -20,6 +20,7 @@
 <div class="container">
   <div class="tweet">
     <h1>TODO詳細</h1>
+    <div class="bg-white">
 
     <div class="form">
       <p>担当者</p>
@@ -46,6 +47,7 @@
       <%= f.select :completed, Tweet.completeds_i18n.invert, {prompt: false}, class:"form-control form-control-sm col-2" %>
       <%= f.submit "更新" %>
       <% end %>
+    </div>
     </div>
     <div class="comment-wrapper">
       <p>コメント一覧</p>
