@@ -42,7 +42,7 @@
     </div>
 
     <div class="from">
-      <%= form_with(model: @tweet, url: tweet_path, local: true,method: :patch, class: "form-row col-1") do |f| %>
+      <%= form_with(model: @tweet, url: tweet_path, local: true, method: :patch, class: "form-row col-1") do |f| %>
       <%= f.select :completed, Tweet.completeds_i18n.invert, {prompt: false}, class:"form-control form-control-sm col-2" %>
       <%= f.submit "更新" %>
       <% end %>
@@ -62,10 +62,10 @@
       <% end %>
 
       <% if user_signed_in? %>
-      <%= form_with(model: [@tweet, @comment], local: true) do |f| %>
-      <%= f.text_area :content,class: "col-8" %>
-      <%= button_tag type: "submit" do %>
-      <i class="far fa-comments"></i> コメントする
+        <%= form_with(model: [@tweet, @comment], local: true) do |f| %>
+        <%= f.text_area :content,class: "col-8" %>
+        <%= button_tag type: "submit" do %>
+        <i class="far fa-comments"></i> コメントする
       <% end %>
       <% end %>
       <% end %>
