@@ -3,15 +3,15 @@ class TweetsController < ApplicationController
   def index
     @tweets = Tweet.order('date').all
     @tweet = Tweet.new
-    @q = Tweet.where(completed: "0").ransack(params[:q])
-    @boards = @q.result.page(params[:page]).per(5)
+    @q = Tweet.ransack(params[:q])
+    @boards = @q.result.page(params[:page]).per(8)
   end
 
   def create
     current_user.tweets.create!(tweet_params)
     @tweets = Tweet.all
     @q = Tweet.ransack(params[:q])
-    @boards = @q.result.page(params[:page])
+    @boards = @q.result.page(params[:page]).per(8)
   end
 
   def show
