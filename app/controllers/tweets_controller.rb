@@ -1,10 +1,10 @@
 class TweetsController < ApplicationController
   before_action :authenticate_user!
   def index
-    @tweets = Tweet.all
+    @tweets = Tweet.order('date').all
     @tweet = Tweet.new
-    @q = Tweet.ransack(params[:q])
-    @boards = @q.result.page(params[:page])
+    @q = Tweet.where(completed: "0").ransack(params[:q])
+    @boards = @q.result.page(params[:page]).per(5)
   end
 
   def create
