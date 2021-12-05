@@ -1,17 +1,19 @@
+# frozen_string_literal: true
+
 class TweetsController < ApplicationController
   before_action :authenticate_user!
   def index
     @tweets = Tweet.order('date').all
     @tweet = Tweet.new
     @q = Tweet.ransack(params[:q])
-    @boards = @q.result.page(params[:page]).per(8)
+    @boards = @q.result.page(params[:page]).per(10)
   end
 
   def create
     current_user.tweets.create!(tweet_params)
     @tweets = Tweet.all
     @q = Tweet.ransack(params[:q])
-    @boards = @q.result.page(params[:page]).per(8)
+    @boards = @q.result.page(params[:page]).per(10)
   end
 
   def show

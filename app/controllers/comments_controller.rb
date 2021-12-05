@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
   before_action :authenticate_user!
 
@@ -5,13 +7,12 @@ class CommentsController < ApplicationController
     tweet = Tweet.find(params[:tweet_id])
     comment = tweet.comments.build(comment_params)
     comment.user_id = current_user.id
-    if comment.save
-      flash[:success] = 'コメントしました'
-      redirect_back(fallback_location: root_path)
-    else
-      flash[:success] = 'コメントできませんでした'
-      redirect_back(fallback_location: root_path)
-    end
+    flash[:success] = if comment.save
+                        'コメントしました'
+                      else
+                        'コメントできませんでした'
+                      end
+    redirect_back(fallback_location: root_path)
   end
 
   private
