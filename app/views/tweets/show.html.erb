@@ -41,7 +41,6 @@
           <p>詳細</p>
           <p><%= @tweet.body %></p>
         </div>
-
         <div class="from">
           <%= form_with(model: @tweet, url: tweet_path, local: true,method: :patch, class: "form-row col-1") do |f| %>
           <%= f.select :completed, Tweet.completeds_i18n.invert, {prompt: false}, class:"form-control form-control-sm col-2" %>
@@ -71,6 +70,20 @@
         <% end %>
         <%= link_to "Tweet一覧に戻る", tweets_path %>
       </div>
+      
+      <br>
+      <% end %>
+
+      <% if user_signed_in? %>
+        <%= form_with(model: [@tweet, @comment], local: true) do |f| %>
+        <%= f.text_area :content,class: "col-8" %>
+        <%= button_tag type: "submit" do %>
+        <i class="far fa-comments"></i> コメントする
+      <% end %>
+      <% end %>
+      <% end %>
+      <%= link_to "Tweet一覧に戻る", tweets_path %>
+
     </div>
   </div>
 </div>
