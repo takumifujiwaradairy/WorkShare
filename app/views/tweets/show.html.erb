@@ -72,8 +72,6 @@
       </div>
       
       <br>
-      <% end %>
-
       <% if user_signed_in? %>
         <%= form_with(model: [@tweet, @comment], local: true) do |f| %>
         <%= f.text_area :content,class: "col-8" %>
@@ -83,7 +81,6 @@
       <% end %>
       <% end %>
       <%= link_to "Tweet一覧に戻る", tweets_path %>
-
     </div>
   </div>
 </div>
