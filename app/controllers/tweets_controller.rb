@@ -3,7 +3,7 @@
 class TweetsController < ApplicationController
   before_action :authenticate_user!
   def index
-    @tweets = Tweet.order('date').all
+    @tweets = Tweet.order('date')
     @tweet = Tweet.new
     @q = Tweet.ransack(params[:q])
     @boards = @q.result.page(params[:page]).per(10)
@@ -11,7 +11,7 @@ class TweetsController < ApplicationController
 
   def create
     current_user.tweets.create!(tweet_params)
-    @tweets = Tweet.all
+    @tweets = Tweet.order('date')
     @q = Tweet.ransack(params[:q])
     @boards = @q.result.page(params[:page]).per(10)
   end
