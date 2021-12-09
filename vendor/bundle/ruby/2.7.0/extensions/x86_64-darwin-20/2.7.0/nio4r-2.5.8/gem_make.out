@@ -1,5 +1,5 @@
 current directory: /Users/fujiwaratakumi/Desktop/WorkShare/vendor/bundle/ruby/2.7.0/gems/nio4r-2.5.8/ext/nio4r
-/Users/fujiwaratakumi/.rbenv/versions/2.7.5/bin/ruby -I /Users/fujiwaratakumi/.rbenv/versions/2.7.5/lib/ruby/2.7.0 -r ./siteconf20211208-45729-1g5rnik.rb extconf.rb
+/Users/fujiwaratakumi/.rbenv/versions/2.7.5/bin/ruby -I /Users/fujiwaratakumi/.rbenv/versions/2.7.5/lib/ruby/site_ruby/2.7.0 -r ./siteconf20211209-75237-19b7b6h.rb extconf.rb
 checking for unistd.h... yes
 checking for linux/aio_abi.h... no
 checking for linux/io_uring.h... no
@@ -13,10 +13,10 @@ checking for sys/resource.h... yes
 creating Makefile
 
 current directory: /Users/fujiwaratakumi/Desktop/WorkShare/vendor/bundle/ruby/2.7.0/gems/nio4r-2.5.8/ext/nio4r
-make "DESTDIR=" clean
+make DESTDIR\= clean
 
 current directory: /Users/fujiwaratakumi/Desktop/WorkShare/vendor/bundle/ruby/2.7.0/gems/nio4r-2.5.8/ext/nio4r
-make "DESTDIR="
+make DESTDIR\=
 compiling bytebuffer.c
 compiling monitor.c
 compiling nio4r_ext.c
@@ -253,5 +253,5 @@ VALUE rb_ensure(VALUE(*)(VALUE),VALUE,VALUE(*)(VALUE),VALUE);
 linking shared-object nio4r_ext.bundle
 
 current directory: /Users/fujiwaratakumi/Desktop/WorkShare/vendor/bundle/ruby/2.7.0/gems/nio4r-2.5.8/ext/nio4r
-make "DESTDIR=" install
-/usr/bin/install -c -m 0755 nio4r_ext.bundle ./.gem.20211208-45729-1nnrx0j
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 nio4r_ext.bundle ./.gem.20211209-75237-le50fc

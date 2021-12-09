@@ -142,9 +142,9 @@ try_link_iconv: checking for iconv... -------------------- yes
 "clang -o conftest -I/Users/fujiwaratakumi/.rbenv/versions/2.7.5/include/ruby-2.7.0/x86_64-darwin20 -I/Users/fujiwaratakumi/.rbenv/versions/2.7.5/include/ruby-2.7.0/ruby/backward -I/Users/fujiwaratakumi/.rbenv/versions/2.7.5/include/ruby-2.7.0 -I. -I/Users/fujiwaratakumi/.rbenv/versions/2.7.5/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT   -g -O2 -fno-common -pipe -std=c99 -Wno-declaration-after-statement -g -Winline -Wmissing-noreturn conftest.c  -L. -L/Users/fujiwaratakumi/.rbenv/versions/2.7.5/lib -L. -L/Users/fujiwaratakumi/.rbenv/versions/2.7.5/lib  -fstack-protector-strong -L/usr/local/lib     -lruby.2.7   "
 Undefined symbols for architecture x86_64:
   "_iconv", referenced from:
-      _main in conftest-c22ba9.o
+      _main in conftest-7a1b8a.o
   "_iconv_open", referenced from:
-      _main in conftest-c22ba9.o
+      _main in conftest-7a1b8a.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 checked program was:

@@ -1,12 +1,12 @@
 current directory: /Users/fujiwaratakumi/Desktop/WorkShare/vendor/bundle/ruby/2.7.0/gems/bcrypt-3.1.16/ext/mri
-/Users/fujiwaratakumi/.rbenv/versions/2.7.5/bin/ruby -I /Users/fujiwaratakumi/.rbenv/versions/2.7.5/lib/ruby/2.7.0 -r ./siteconf20211208-45729-2laqra.rb extconf.rb
+/Users/fujiwaratakumi/.rbenv/versions/2.7.5/bin/ruby -I /Users/fujiwaratakumi/.rbenv/versions/2.7.5/lib/ruby/site_ruby/2.7.0 -r ./siteconf20211209-75237-mmhznf.rb extconf.rb
 creating Makefile
 
 current directory: /Users/fujiwaratakumi/Desktop/WorkShare/vendor/bundle/ruby/2.7.0/gems/bcrypt-3.1.16/ext/mri
-make "DESTDIR=" clean
+make DESTDIR\= clean
 
 current directory: /Users/fujiwaratakumi/Desktop/WorkShare/vendor/bundle/ruby/2.7.0/gems/bcrypt-3.1.16/ext/mri
-make "DESTDIR="
+make DESTDIR\=
 compiling bcrypt_ext.c
 compiling crypt_blowfish.c
 clang  -D__SKIP_GNU -I/Users/fujiwaratakumi/.rbenv/versions/2.7.5/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -c -o x86.o x86.S
@@ -19,5 +19,5 @@ char *crypt_r(const char *key, const char *setting, struct crypt_data *data)
 linking shared-object bcrypt_ext.bundle
 
 current directory: /Users/fujiwaratakumi/Desktop/WorkShare/vendor/bundle/ruby/2.7.0/gems/bcrypt-3.1.16/ext/mri
-make "DESTDIR=" install
-/usr/bin/install -c -m 0755 bcrypt_ext.bundle ./.gem.20211208-45729-nw05ns
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 bcrypt_ext.bundle ./.gem.20211209-75237-1qaddbh

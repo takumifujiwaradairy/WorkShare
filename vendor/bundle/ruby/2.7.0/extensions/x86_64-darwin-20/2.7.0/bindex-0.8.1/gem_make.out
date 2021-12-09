@@ -1,15 +1,15 @@
 current directory: /Users/fujiwaratakumi/Desktop/WorkShare/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
-/Users/fujiwaratakumi/.rbenv/versions/2.7.5/bin/ruby -I /Users/fujiwaratakumi/.rbenv/versions/2.7.5/lib/ruby/2.7.0 -r ./siteconf20211208-45729-cvc0fw.rb extconf.rb
+/Users/fujiwaratakumi/.rbenv/versions/2.7.5/bin/ruby -I /Users/fujiwaratakumi/.rbenv/versions/2.7.5/lib/ruby/site_ruby/2.7.0 -r ./siteconf20211209-75237-qqxcbk.rb extconf.rb
 creating Makefile
 
 current directory: /Users/fujiwaratakumi/Desktop/WorkShare/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
-make "DESTDIR=" clean
+make DESTDIR\= clean
 
 current directory: /Users/fujiwaratakumi/Desktop/WorkShare/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
-make "DESTDIR="
+make DESTDIR\=
 compiling cruby.c
 linking shared-object skiptrace/internal/cruby.bundle
 
 current directory: /Users/fujiwaratakumi/Desktop/WorkShare/vendor/bundle/ruby/2.7.0/gems/bindex-0.8.1/ext/skiptrace
-make "DESTDIR=" install
-/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20211208-45729-1fr86t2/skiptrace/internal
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20211209-75237-1atrqff/skiptrace/internal

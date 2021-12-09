@@ -1,5 +1,5 @@
 current directory: /Users/fujiwaratakumi/Desktop/WorkShare/vendor/bundle/ruby/2.7.0/gems/sqlite3-1.4.2/ext/sqlite3
-/Users/fujiwaratakumi/.rbenv/versions/2.7.5/bin/ruby -I /Users/fujiwaratakumi/.rbenv/versions/2.7.5/lib/ruby/2.7.0 -r ./siteconf20211208-45729-bov0k7.rb extconf.rb
+/Users/fujiwaratakumi/.rbenv/versions/2.7.5/bin/ruby -I /Users/fujiwaratakumi/.rbenv/versions/2.7.5/lib/ruby/site_ruby/2.7.0 -r ./siteconf20211209-75237-181ke2a.rb extconf.rb
 checking for sqlite3.h... yes
 checking for pthread_create() in -lpthread... yes
 checking for -ldl... yes
@@ -18,10 +18,10 @@ checking for sqlite3_uint64 in sqlite3.h... yes
 creating Makefile
 
 current directory: /Users/fujiwaratakumi/Desktop/WorkShare/vendor/bundle/ruby/2.7.0/gems/sqlite3-1.4.2/ext/sqlite3
-make "DESTDIR=" clean
+make DESTDIR\= clean
 
 current directory: /Users/fujiwaratakumi/Desktop/WorkShare/vendor/bundle/ruby/2.7.0/gems/sqlite3-1.4.2/ext/sqlite3
-make "DESTDIR="
+make DESTDIR\=
 compiling aggregator.c
 compiling backup.c
 compiling database.c
@@ -64,5 +64,5 @@ linking shared-object sqlite3/sqlite3_native.bundle
 ld: warning: directory not found for option '-L/usr/local/opt/sqlite/lib'
 
 current directory: /Users/fujiwaratakumi/Desktop/WorkShare/vendor/bundle/ruby/2.7.0/gems/sqlite3-1.4.2/ext/sqlite3
-make "DESTDIR=" install
-/usr/bin/install -c -m 0755 sqlite3_native.bundle ./.gem.20211208-45729-cglcw0/sqlite3
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 sqlite3_native.bundle ./.gem.20211209-75237-1a6c386/sqlite3

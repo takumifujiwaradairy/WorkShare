@@ -13,10 +13,10 @@ Gem::Specification.new do |s|
   s.email = ["zm.backer@gmail.com".freeze]
   s.homepage = "".freeze
   s.licenses = ["MIT".freeze]
-  s.rubygems_version = "3.1.6".freeze
+  s.rubygems_version = "3.2.33".freeze
   s.summary = "Extends of ActiveRecord::Enum, which can used in simple_form and internationalization".freeze
 
-  s.installed_by_version = "3.1.6" if s.respond_to? :installed_by_version
+  s.installed_by_version = "3.2.33" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 4

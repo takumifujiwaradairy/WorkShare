@@ -1,5 +1,5 @@
 current directory: /Users/fujiwaratakumi/Desktop/WorkShare/vendor/bundle/ruby/2.7.0/gems/pg-1.2.3/ext
-/Users/fujiwaratakumi/.rbenv/versions/2.7.5/bin/ruby -I /Users/fujiwaratakumi/.rbenv/versions/2.7.5/lib/ruby/2.7.0 -r ./siteconf20211208-45729-ugpny1.rb extconf.rb
+/Users/fujiwaratakumi/.rbenv/versions/2.7.5/bin/ruby -I /Users/fujiwaratakumi/.rbenv/versions/2.7.5/lib/ruby/site_ruby/2.7.0 -r ./siteconf20211209-75237-8g1mwp.rb extconf.rb
 checking for pg_config... yes
 Using config values from /usr/local/bin/pg_config
 checking for libpq-fe.h... yes
@@ -21,10 +21,10 @@ creating extconf.h
 creating Makefile
 
 current directory: /Users/fujiwaratakumi/Desktop/WorkShare/vendor/bundle/ruby/2.7.0/gems/pg-1.2.3/ext
-make "DESTDIR=" clean
+make DESTDIR\= clean
 
 current directory: /Users/fujiwaratakumi/Desktop/WorkShare/vendor/bundle/ruby/2.7.0/gems/pg-1.2.3/ext
-make "DESTDIR="
+make DESTDIR\=
 compiling gvl_wrappers.c
 compiling pg.c
 compiling pg_binary_decoder.c
@@ -49,5 +49,5 @@ compiling pg_util.c
 linking shared-object pg_ext.bundle
 
 current directory: /Users/fujiwaratakumi/Desktop/WorkShare/vendor/bundle/ruby/2.7.0/gems/pg-1.2.3/ext
-make "DESTDIR=" install
-/usr/bin/install -c -m 0755 pg_ext.bundle ./.gem.20211208-45729-18jpopw
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 pg_ext.bundle ./.gem.20211209-75237-uv85fy

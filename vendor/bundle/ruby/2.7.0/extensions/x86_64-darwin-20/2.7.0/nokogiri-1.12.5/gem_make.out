@@ -1,5 +1,5 @@
 current directory: /Users/fujiwaratakumi/Desktop/WorkShare/vendor/bundle/ruby/2.7.0/gems/nokogiri-1.12.5/ext/nokogiri
-/Users/fujiwaratakumi/.rbenv/versions/2.7.5/bin/ruby -I /Users/fujiwaratakumi/.rbenv/versions/2.7.5/lib/ruby/2.7.0 -r ./siteconf20211208-45729-iio1w2.rb extconf.rb
+/Users/fujiwaratakumi/.rbenv/versions/2.7.5/bin/ruby -I /Users/fujiwaratakumi/.rbenv/versions/2.7.5/lib/ruby/site_ruby/2.7.0 -r ./siteconf20211209-75237-1xn5b4n.rb extconf.rb
 checking for whether -std=c99 is accepted as CFLAGS... yes
 checking for whether -Wno-declaration-after-statement is accepted as CFLAGS... yes
 checking for whether -g is accepted as CFLAGS... yes
@@ -96,10 +96,10 @@ checking for whether -DNOKOGIRI_OTHER_LIBRARY_VERSIONS="\"libgumbo:1.0.0-nokogir
 creating Makefile
 
 current directory: /Users/fujiwaratakumi/Desktop/WorkShare/vendor/bundle/ruby/2.7.0/gems/nokogiri-1.12.5/ext/nokogiri
-make "DESTDIR=" clean
+make DESTDIR\= clean
 
 current directory: /Users/fujiwaratakumi/Desktop/WorkShare/vendor/bundle/ruby/2.7.0/gems/nokogiri-1.12.5/ext/nokogiri
-make "DESTDIR="
+make DESTDIR\=
 compiling gumbo.c
 compiling html4_document.c
 compiling html4_element_description.c
@@ -141,6 +141,6 @@ rm -rf /Users/fujiwaratakumi/Desktop/WorkShare/vendor/bundle/ruby/2.7.0/gems/nok
 rm -rf /Users/fujiwaratakumi/Desktop/WorkShare/vendor/bundle/ruby/2.7.0/gems/nokogiri-1.12.5/ports
 
 current directory: /Users/fujiwaratakumi/Desktop/WorkShare/vendor/bundle/ruby/2.7.0/gems/nokogiri-1.12.5/ext/nokogiri
-make "DESTDIR=" install
-/usr/bin/install -c -m 0755 nokogiri.bundle ./.gem.20211208-45729-1ssmypm/nokogiri
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 nokogiri.bundle ./.gem.20211209-75237-12osjuh/nokogiri
 installing nokogiri libraries
