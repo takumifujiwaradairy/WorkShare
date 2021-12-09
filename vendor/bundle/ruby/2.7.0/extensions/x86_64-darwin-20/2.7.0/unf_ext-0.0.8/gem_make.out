@@ -1,5 +1,5 @@
 current directory: /Users/fujiwaratakumi/Desktop/WorkShare/vendor/bundle/ruby/2.7.0/gems/unf_ext-0.0.8/ext/unf_ext
-/Users/fujiwaratakumi/.rbenv/versions/2.7.5/bin/ruby -I /Users/fujiwaratakumi/.rbenv/versions/2.7.5/lib/ruby/site_ruby/2.7.0 -r ./siteconf20211209-95878-p1fj81.rb extconf.rb
+/Users/fujiwaratakumi/.rbenv/versions/2.7.5/bin/ruby -I /Users/fujiwaratakumi/.rbenv/versions/2.7.5/lib/ruby/site_ruby/2.7.0 -r ./siteconf20211209-27234-12m85nx.rb extconf.rb
 checking for -lstdc++... yes
 creating Makefile
 
@@ -13,4 +13,4 @@ linking shared-object unf_ext.bundle
 
 current directory: /Users/fujiwaratakumi/Desktop/WorkShare/vendor/bundle/ruby/2.7.0/gems/unf_ext-0.0.8/ext/unf_ext
 make DESTDIR\= install
-/usr/bin/install -c -m 0755 unf_ext.bundle ./.gem.20211209-95878-1v1rbl5
+/usr/bin/install -c -m 0755 unf_ext.bundle ./.gem.20211209-27234-1v5apef
