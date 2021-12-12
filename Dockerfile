@@ -1,4 +1,4 @@
-FROM ruby:2.6.5
+FROM ruby:2.7.5
 RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
 
 RUN mkdir /WorkShare
@@ -9,5 +9,3 @@ COPY Gemfile.lock /WorkShare/Gemfile.lock
 
 RUN bundle install
 COPY . /WorkShare
-
-RUN gem install bundler
