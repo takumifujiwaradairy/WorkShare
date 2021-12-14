@@ -11,5 +11,5 @@ Rails.application.routes.draw do
     resources :likes, only: %i[create destroy]
     resources :comments, only: [:create]
   end
-  resources :linebot,only: %i[client callback] do
+  post '/callback' => 'linebot#callback'
 end
