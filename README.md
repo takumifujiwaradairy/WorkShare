@@ -1,25 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 # WorkShare
+
+#Ngrokの環境構築
+インストール方法
+$ brew install ngrok/ngrok/ngrok
+アカウント作成と紐付け
+※ここは、省いても２時間までは無料で使える。それ以降は再度実行しなければならない。
+https://dashboard.ngrok.com/
+$ ./ngrok authtoken トークン名
+サーバーの実行
+$./ngrok http 3000
