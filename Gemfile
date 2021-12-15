@@ -100,3 +100,7 @@ gem 'dotenv-rails'
 gem 'line-bot-api'
 
 gem 'dotenv-rails' 
+
+gem 'omniauth-line'
+
+gem "omniauth-rails_csrf_protection"
