@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,54 +10,57 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_211_128_035_750) do
-  create_table 'comments', force: :cascade do |t|
-    t.string 'content'
-    t.integer 'user_id', null: false
-    t.integer 'tweet_id', null: false
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.index ['tweet_id'], name: 'index_comments_on_tweet_id'
-    t.index ['user_id'], name: 'index_comments_on_user_id'
+ActiveRecord::Schema.define(version: 2021_12_14_105524) do
+
+  create_table "comments", force: :cascade do |t|
+    t.string "content"
+    t.integer "user_id", null: false
+    t.integer "tweet_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["tweet_id"], name: "index_comments_on_tweet_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table 'likes', force: :cascade do |t|
-    t.integer 'tweet_id', null: false
-    t.integer 'user_id', null: false
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.index ['tweet_id'], name: 'index_likes_on_tweet_id'
-    t.index ['user_id'], name: 'index_likes_on_user_id'
+  create_table "likes", force: :cascade do |t|
+    t.integer "tweet_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["tweet_id"], name: "index_likes_on_tweet_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
-  create_table 'tweets', force: :cascade do |t|
-    t.string 'title'
-    t.string 'tantou'
-    t.text 'body'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.integer 'user_id'
-    t.date 'time'
-    t.integer 'completed', default: 0
+  create_table "tweets", force: :cascade do |t|
+    t.string "title"
+    t.string "tantou"
+    t.text "body"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.date "time"
+    t.integer "completed", default: 0
   end
 
-  create_table 'users', force: :cascade do |t|
-    t.string 'email', default: '', null: false
-    t.string 'encrypted_password', default: '', null: false
-    t.string 'reset_password_token'
-    t.datetime 'reset_password_sent_at'
-    t.datetime 'remember_created_at'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.string 'name'
-    t.text 'profile'
-    t.string 'image'
-    t.index ['email'], name: 'index_users_on_email', unique: true
-    t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.text "profile"
+    t.string "image"
+    t.string "provider"
+    t.string "uid"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key 'comments', 'tweets'
-  add_foreign_key 'comments', 'users'
-  add_foreign_key 'likes', 'tweets'
-  add_foreign_key 'likes', 'users'
+  add_foreign_key "comments", "tweets"
+  add_foreign_key "comments", "users"
+  add_foreign_key "likes", "tweets"
+  add_foreign_key "likes", "users"
 end
