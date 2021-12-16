@@ -5,6 +5,8 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def basic_action
     @omniauth = request.env["omniauth.auth"]
     if @omniauth.present?
+      puts User.column_names
+      puts @omniauth.inspect
       @profile = User.find_or_initialize_by(provider: @omniauth["provider"], uid: @omniauth["uid"])
       if @profile.email.blank?
         email = @omniauth["info"]["email"] ? @omniauth["info"]["email"] : "#{@omniauth["uid"]}-#{@omniauth["provider"]}@example.com"
