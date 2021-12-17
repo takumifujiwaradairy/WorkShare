@@ -1,12 +1,11 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  def index; end
   def line; basic_action end
 
   private
   def basic_action
     @omniauth = request.env["omniauth.auth"]
     if @omniauth.present?
-      puts User.column_names
-      puts @omniauth.inspect
       @profile = User.find_or_initialize_by(provider: @omniauth["provider"], uid: @omniauth["uid"])
       if @profile.email.blank?
         email = @omniauth["info"]["email"] ? @omniauth["info"]["email"] : "#{@omniauth["uid"]}-#{@omniauth["provider"]}@example.com"
@@ -16,7 +15,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
       sign_in(:user, @profile)
     end
     flash[:notice] = "ログインしました"
-    redirect_to root_path
+    redirect_to tweet_path
   end
 
   def fake_email(uid, provider)
