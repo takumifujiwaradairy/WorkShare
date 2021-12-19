@@ -45,6 +45,6 @@ class TweetsController < ApplicationController
   private
 
   def tweet_params
-    params.require(:tweet).permit(:title, :tantou, :body, :time, :completed)
+    params.require(:tweet).permit(:title, :tantou, :body, :time, :completed, :user_uid)
   end
 end
