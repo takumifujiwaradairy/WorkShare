@@ -10,9 +10,10 @@ class TweetsController < ApplicationController
   end
 
   def create
-    current_user.tweets.create!(tweet_params)
-    @tweets = Tweet.order('date')
+    @tweet = current_user.tweets.create!(tweet_params)
     @tweet.user_uid = current_user.uid
+    @tweet.save
+    @tweets = Tweet.order('date')
     @q = Tweet.ransack(params[:q])
     @boards = @q.result.page(params[:page]).per(10)
   end
@@ -38,13 +39,13 @@ class TweetsController < ApplicationController
 
   def destroy
     tweet = Tweet.find(params[:id])
-    tweet.destroy
+    tweet.destroy 
     redirect_to tweets_path
   end
 
   private
 
   def tweet_params
-    params.require(:tweet).permit(:title, :tantou, :body, :time, :completed, :user_uid)
+    params.require(:tweet).permit(:title, :tantou, :body, :time, :completed)
   end
 end
