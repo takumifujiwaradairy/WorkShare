@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_14_105524) do
+ActiveRecord::Schema.define(version: 2021_12_19_031821) do
 
   create_table "comments", force: :cascade do |t|
     t.string "content"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2021_12_14_105524) do
     t.integer "user_id"
     t.date "time"
     t.integer "completed", default: 0
+    t.string "user_uid"
   end
 
   create_table "users", force: :cascade do |t|
