@@ -12,6 +12,7 @@ class TweetsController < ApplicationController
   def create
     current_user.tweets.create!(tweet_params)
     @tweets = Tweet.order('date')
+    @tweet.user_uid = current_user.uid
     @q = Tweet.ransack(params[:q])
     @boards = @q.result.page(params[:page]).per(10)
   end
