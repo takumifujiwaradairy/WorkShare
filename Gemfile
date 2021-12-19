@@ -99,8 +99,8 @@ gem 'dotenv-rails'
 
 gem 'line-bot-api'
 
-gem 'dotenv-rails' 
+gem 'dotenv-rails'
 
 gem 'omniauth-line'
 
-gem "omniauth-rails_csrf_protection"
+gem 'omniauth-rails_csrf_protection'
